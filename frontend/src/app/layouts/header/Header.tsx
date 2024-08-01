@@ -1,5 +1,6 @@
 "use client"
 import { Button } from "@/app/components/ui/button/button";
+import AnimatedLink from "@/app/components/ui/link/Link";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
@@ -40,18 +41,24 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${scrollDir && styles.header_hide}`}>
       <div className={styles.header__left_side}>
-        Portfolio
+        <AnimatedLink href="/">
+          Portfolio
+        </AnimatedLink>
       </div>
       <div className={cn(styles.header__right_side, "buttons")}>
-        <Button size="flexible">
-          Hire me
-        </Button>
+        <AnimatedLink href="menu">
+          <Button size="flexible">
+            Hire me
+          </Button>
+        </AnimatedLink>
         <Button size="flexible">
           Login
         </Button>
-        <Button size="flexible">
-          <BiMenu />
-        </Button>
+        <AnimatedLink href="/menu">
+          <Button size="flexible">
+            <BiMenu />
+          </Button>
+        </AnimatedLink>
       </div>
     </header>
   )
