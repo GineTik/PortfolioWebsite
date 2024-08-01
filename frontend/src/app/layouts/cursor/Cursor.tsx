@@ -19,7 +19,7 @@ const CursorFollower = () => {
             clickables={[
                 "a",
                 {
-                    target: "img",
+                    target: ".cursor_trigger",
                     outerScale: 300
                 }
             ]}
