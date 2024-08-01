@@ -1,0 +1,11 @@
+.text {
+    @apply w-[100%] relative z-0 bottom-[5px] left-[5px] text-[2vw];
+    filter: url('#round');
+
+    & > span {
+        @apply bg-stone-900 pr-[10px] py-[0.5vw];
+
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+}

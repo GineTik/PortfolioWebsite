@@ -1,0 +1,72 @@
+.section {
+    @apply px-[10px];
+
+    .section__position {
+        @apply uppercase font-black text-[9.2vw] text-center flex flex-col leading-[0.9] mt-[50px];
+
+        .position__text {
+            @apply z-0 relative;
+
+            &::after {
+                content: '';
+                @apply w-full h-full absolute top-0 left-0 bg-stone-900 -z-10;
+            }
+        }
+
+        .position__text:not(:first-child) {
+            @apply -mt-[6vw];
+        }
+
+        .position__text:nth-child(2) {
+            @apply -z-10 text-white/60;
+
+            .green {
+                @apply text-lime-400/60;
+            }
+        }
+
+        .position__text:nth-child(3) {
+            @apply -z-20 text-white/30;
+            
+            .green {
+                @apply text-lime-400/30;
+            }
+        }
+    }
+
+    .green {
+        @apply text-lime-400;
+    }
+
+    .section__second_row {
+        @apply flex justify-between relative;
+
+        .section__description {
+            @apply w-[60vw] relative;
+
+            .description__title {
+                @apply uppercase text-[4.3vw] font-black text-lime-400 mb-[10px] scale-x-125 origin-left;
+            }
+
+            .description__text {
+                
+            }
+        }
+
+        .section__media {
+            @apply w-[40vw] h-[40vw] relative;
+
+            .media__wrapper {
+                @apply absolute top-0 right-0 w-[50vw] h-[50vw] max-h-[1000px] rounded-[20px] overflow-hidden -z-10;
+                
+                .media__image {
+                    @apply w-full h-full object-cover;
+                }
+            }
+        }
+
+        .section__skills_ribbon {
+            @apply absolute;
+        }
+    }
+}
