@@ -44,6 +44,9 @@ const Header = () => {
       </div>
       <div className={cn(styles.header__right_side, "buttons")}>
         <Button size="flexible">
+          Hire me
+        </Button>
+        <Button size="flexible">
           Login
         </Button>
         <Button size="flexible">
