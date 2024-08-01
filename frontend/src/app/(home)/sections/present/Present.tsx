@@ -3,6 +3,9 @@ import IImage from "@/../public/images/i.jpg"
 import BgFilteredText from "@/app/components/bg-filter-text/BgFilteredText"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
+import { AiFillBug, AiFillCrown } from "react-icons/ai"
+import { IoIosRocket } from "react-icons/io"
+import { TiStarburst } from "react-icons/ti"
 import styles from "./Present.module.scss"
 
 const Present = () => {
@@ -64,26 +67,28 @@ const Present = () => {
           </div>
           <div className={styles.section__skills_ribbon}>
             <div className={styles.skills_ribbon__content} ref={movingRowRef}>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
-              <span>Next.js</span>
-              <span>ASP.NET Core</span>
+              <IoIosRocket />
+              <span>Hardworking</span>
+              <TiStarburst />
+              <span>Kind</span>
+              <AiFillBug />
+              <span>Happy</span>
+              <AiFillCrown />
+              <span>Learnable</span>
+              <IoIosRocket />
+              <span>Punctual</span>
+              <TiStarburst />
+              <span>Hardworking</span>
+              <AiFillBug />
+              <span>Kind</span>
+              <AiFillCrown />
+              <span>Happy</span>
+              <IoIosRocket />
+              <span>Learnable</span>
+              <TiStarburst />
+              <span>Punctual</span>
+              <AiFillBug />
+              <span>Punctual</span>
             </div>
           </div>
         </div>

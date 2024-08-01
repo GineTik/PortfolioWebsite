@@ -1,0 +1,31 @@
+// VARIANTS
+
+.variant_default {
+    @apply relative bg-lime-400 rounded-full flex items-center justify-center uppercase;
+
+    svg {
+        @apply text-black;
+    }
+
+    &:active {
+        @apply scale-90;
+    }
+}
+
+// SIZES
+
+.size_default {
+    @apply p-[10px] h-[33px];
+
+    svg {
+        @apply size-[30px];
+    }
+}
+
+.size_flexible {
+    @apply px-[1vw] h-[3.3vw] text-[1.4vw];
+
+    svg {
+        @apply size-[3vw];
+    }
+}

@@ -1,9 +1,11 @@
 .section {
+    @apply mt-[6vw];
+
     .section__content {
         @apply px-[10px];
 
         .section__title {
-            @apply uppercase font-black text-[16.2vw] text-center flex flex-col leading-[0.8] mt-[50px];
+            @apply uppercase font-black text-[16.2vw] text-center flex flex-col leading-[0.8];
 
             .position__text {
                 @apply z-0 relative transition;
@@ -100,6 +102,10 @@
 
                 .skills_ribbon__content {
                     @apply flex items-center justify-center gap-[2.2vw] h-full;
+
+                    svg {
+                        @apply text-lime-400 min-w-[2vw];
+                    }
 
                     span {
                         @apply whitespace-nowrap;
