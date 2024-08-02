@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config = {
 	darkMode: ['class'],
@@ -10,6 +11,11 @@ const config = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				primary: {
+					DEFAULT: colors.lime['400']
+				}
+			},
 			keyframes: {
 				show: {
 					from: {

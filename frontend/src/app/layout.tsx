@@ -8,17 +8,17 @@ import "./globals.css"
 import styles from "./layout.module.scss"
 import Providers from "./Providers"
 
-const sora = Sora({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Denis Shevchuk Portfolio",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">

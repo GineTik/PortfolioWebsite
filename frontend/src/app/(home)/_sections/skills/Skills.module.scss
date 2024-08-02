@@ -1,0 +1,54 @@
+.section {
+    @apply relative;
+
+    .section__title {
+        @apply font-black uppercase;
+    
+        .title__row {
+            @apply flex items-center gap-[.6vw] opacity-0;
+            transform: translate3d(10%, 15%, 0px) rotateX(-60deg);
+        }
+    
+        .title__white,
+        .title__outline {
+            @apply text-[15vw] leading-[.8] tracking-tighter;
+        }
+    
+        .title__white {
+            @apply text-white;
+        }
+    
+        .title__green {
+            @apply text-primary text-[5vw] w-[40vw] block leading-[1];
+            transform: translate3d(15%, 15%, 0px) rotateX(-30deg);
+        }
+    
+        .title__outline {
+            @apply text-stone-900;
+            text-shadow: -1px -1px 0 theme('colors.white'), 
+                        1px -1px 0 theme('colors.white'), 
+                        -1px 1px 0 theme('colors.white'),
+                        1px 1px 0 theme('colors.white');
+        }
+    }
+    
+    .section__icon {
+        @apply absolute top-[-12vw] right-[8vw] w-[16vw] h-[60vw] overflow-hidden;
+
+        svg {
+            @apply absolute fill-stone-800 stroke-[1px] stroke-stone-800 left-1/2 -translate-x-1/2 size-[40vw];
+
+            &:nth-child(1) {
+                @apply top-0;
+            }
+
+            &:nth-child(2) {
+                @apply top-[9vw];
+            }
+
+            &:nth-child(3) {
+                @apply top-[18vw];
+            }
+        }
+    }
+}
