@@ -1,0 +1,82 @@
+.section {
+  @apply mt-[6vw];
+}
+.section .section__content {
+  @apply px-[10px];
+}
+.section .section__content .section__title {
+  @apply uppercase font-black text-[16.2vw] text-center flex flex-col leading-[0.8];
+}
+.section .section__content .section__title .position__text {
+  @apply z-0 relative transition;
+}
+.section .section__content .section__title .position__text:not(:first-child) {
+  @apply -mt-[13vw] duration-1000;
+  transition-property: margin;
+  transition-timing-function: cubic-bezier(0.94, 0.02, 0.16, 0.99);
+}
+.section .section__content .section__title .position__text:not(:first-child)::after {
+  content: "";
+  @apply w-full h-full absolute bottom-[3vw] left-0 bg-stone-900;
+}
+.section .section__content .section__title .position__text:nth-child(2) {
+  @apply -z-10 text-white/60;
+}
+.section .section__content .section__title .position__text:nth-child(2) .green {
+  @apply text-lime-400/60;
+}
+.section .section__content .section__title .position__text:nth-child(3) {
+  @apply -z-20 text-white/30;
+}
+.section .section__content .section__title .position__text:nth-child(3) .green {
+  @apply text-lime-400/30;
+}
+.section .section__content .section__title.startup_animation .position__text:not(:first-child) {
+  @apply -mt-[10vw];
+}
+.section .section__content .green {
+  @apply text-lime-400;
+}
+.section .section__content .section__second_row {
+  @apply flex justify-between relative;
+}
+.section .section__content .section__second_row .section__description {
+  @apply w-[60vw] relative;
+}
+.section .section__content .section__second_row .section__description .description__title {
+  @apply uppercase text-[4.3vw] font-black text-lime-400 mb-[10px] scale-x-125 origin-left flex gap-[1vw] overflow-hidden relative;
+}
+.section .section__content .section__second_row .section__description .description__title span {
+  @apply relative bottom-[5vw] duration-300 transition-all;
+}
+.section .section__content .section__second_row .section__description .description__title span:nth-child(1) {
+  @apply delay-[800ms];
+}
+.section .section__content .section__second_row .section__description .description__title span:nth-child(2) {
+  @apply delay-[1050ms];
+}
+.section .section__content .section__second_row .section__description .description__title.startup_animation span {
+  @apply relative bottom-0;
+}
+.section .section__content .section__second_row .section__media {
+  @apply w-[40vw] h-[50vw] max-h-[1000px] relative transition-all;
+}
+.section .section__content .section__second_row .section__media .media__wrapper {
+  @apply absolute top-0 right-0 w-[50vw] h-[50vw] max-h-[1000px] rounded-[20px] overflow-hidden -z-10;
+}
+.section .section__content .section__second_row .section__media .media__wrapper .media__image {
+  @apply w-full h-full object-cover;
+}
+.section .section__content .section__second_row .section__skills_ribbon {
+  @apply absolute mx-[-10px] left-0 top-[80%] w-[100vw] bg-stone-950 rotate-2 h-[5vw] shadow-2xl uppercase font-black text-[2vw];
+  @apply 2xl:top-[90%];
+}
+.section .section__content .section__second_row .section__skills_ribbon .skills_ribbon__content {
+  @apply flex items-center justify-center gap-[2.2vw] h-full;
+}
+.section .section__content .section__second_row .section__skills_ribbon .skills_ribbon__content svg {
+  @apply text-lime-400 min-w-[2vw];
+}
+.section .section__content .section__second_row .section__skills_ribbon .skills_ribbon__content span {
+  @apply whitespace-nowrap;
+}/*# sourceMappingURL=Present.module.css.map */

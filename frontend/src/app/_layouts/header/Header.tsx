@@ -1,13 +1,13 @@
 "use client"
-import { Button } from "@/app/components/ui/button/button";
-import AnimatedLink from "@/app/components/ui/link/Link";
-import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import { BiMenu } from "react-icons/bi";
-import styles from "./Header.module.scss";
+import { Button } from "@/app/_components/ui/button/Button"
+import AnimatedLink from "@/app/_components/ui/link/Link"
+import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react"
+import { BiMenu } from "react-icons/bi"
+import styles from "./Header.module.scss"
 
 const Header = () => {
-  const [scrollDir, setScrollDir] = useState(false);
+  const [scrollDir, setScrollDir] = useState(false)
 
   useEffect(() => {
     const threshold = 0;
@@ -24,7 +24,7 @@ const Header = () => {
       setScrollDir(scrollY > lastScrollY)
       lastScrollY = scrollY > 0 ? scrollY : 0
       ticking = false
-    };
+    }
 
     const onScroll = () => {
       if (!ticking) {

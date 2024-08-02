@@ -1,6 +1,6 @@
 "use client"
 import IImage from "@/../public/images/i.jpg"
-import BgFilteredText from "@/app/components/bg-filter-text/BgFilteredText"
+import BgFilteredText from "@/app/_components/bg-filter-text/BgFilteredText"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
 import { AiFillBug, AiFillCrown } from "react-icons/ai"

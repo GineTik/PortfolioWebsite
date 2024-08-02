@@ -1,7 +1,7 @@
 .cover {
     @apply fixed top-0 left-0 w-[100vw] h-[100vh] z-50 bg-stone-900 -translate-y-[100vh] transition-transform duration-1000 flex justify-center items-center;
 
-    &.cover_animate {
+    &.cover_active {
         @apply -translate-y-0;
     }
 

@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.scss"
-import Portfolio from "./sections/portfolio/Portfolio"
-import Present from "./sections/present/Present"
-import Skills from "./sections/skills/Skills"
+import Portfolio from "./_sections/portfolio/Portfolio"
+import Present from "./_sections/present/Present"
+import Skills from "./_sections/skills/Skills"
 
 const HomePage = () => {
   return (

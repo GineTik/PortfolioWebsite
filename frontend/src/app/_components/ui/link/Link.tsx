@@ -1,24 +1,22 @@
+import { useReduxActions } from "@/hooks/useReduxActions"
 import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
-import { AnchorHTMLAttributes, useCallback, useRef } from "react"
-import { IoIosRocket } from "react-icons/io"
-import styles from "./Link.module.scss"
+import { AnchorHTMLAttributes, useCallback } from "react"
 
 type AnimatedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>
 
 const AnimatedLink = ({className, onClick, href, ...props}: AnimatedLinkProps) => {
     const router = useRouter()
-    const coverRef = useRef<HTMLDivElement>(null)
+    const {enableLoadingTransition} = useReduxActions()
 
     const handle = useCallback((e: any) => {
         e.preventDefault()
-        if (!href || !coverRef?.current)
+        if (!href)
             return
         
-        coverRef.current?.classList.add(styles.cover_animate)
+        enableLoadingTransition()
         setTimeout(() => {
-            router.replace(href)
-            coverRef.current?.classList.remove(styles.cover_animate)
+            router.push(href)
         }, 1000)
         onClick && onClick(e)
 
@@ -27,9 +25,6 @@ const AnimatedLink = ({className, onClick, href, ...props}: AnimatedLinkProps) =
     return (
         <>
             <a className={cn(className)} onClick={handle} href={href} {...props} />
-            <div className={styles.cover} ref={coverRef}>
-                <IoIosRocket />
-            </div>
         </>
     )
 }
