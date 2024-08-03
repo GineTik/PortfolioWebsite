@@ -2,11 +2,14 @@
 import { Button } from "@/app/_components/ui/button/Button"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { useState } from "react"
 import styles from "./Skill.module.scss"
 
-gsap.registerPlugin(ScrollTrigger, useGSAP)
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger, useGSAP, DrawSVGPlugin)
+}
 
 type SkillChildrenProps = {
     children: any
@@ -20,20 +23,33 @@ const SkillGroup = ({children, index}: SkillGroupProps) => {
     
     const [borderId, _] = useState("d" + crypto.randomUUID())
     useGSAP(() => {
-        gsap.to(`#${borderId}`, {
+        // gsap.to(`#${borderId}`, {
+        //     scrollTrigger: {
+        //         trigger: `#${borderId}`,
+        //         end: "top 30%",
+        //         scrub: true
+        //     },
+        //     y: 0,
+        // })
+
+        gsap.from(`#${borderId}`, {
             scrollTrigger: {
                 trigger: `#${borderId}`,
-                end: "top 30%",
-                scrub: true
+                start: "top 90%"
+                // end: "top 30%",
+                // scrub: true
             },
-            y: 0,
+            duration: 2,
+            drawSVG: "0"
         })
     }, [])
 
   return (
     <div className={styles.group}>
-        <div className={styles.group__border} id={borderId}>
-            <svg viewBox="0 0 1362 51" fill="none" style={{clipPath: "polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)"}}><path d="M0 1.5H571.719C590.957 1.5 609.914 6.12563 626.99 14.9869L667.51 36.0131C684.586 44.8744 703.543 49.5 722.781 49.5H1362" strokeWidth="2"></path></svg>
+        <div className={styles.group__border}>
+            <svg viewBox="0 0 1362 51" fill="none" style={{clipPath: "polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)"}}>
+                <path id={borderId} d="M0 1.5H571.719C590.957 1.5 609.914 6.12563 626.99 14.9869L667.51 36.0131C684.586 44.8744 703.543 49.5 722.781 49.5H1362" strokeWidth="2"></path>
+            </svg>
         </div>
         <div className={styles.group__inner}>
             <div className={styles.group__number}>00{index}</div>
