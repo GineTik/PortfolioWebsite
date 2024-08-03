@@ -26,6 +26,22 @@
     }
 }
 
+.variant_popover_link {
+    @apply bg-stone-800 rounded-full flex items-center transition font-normal;
+
+    &.size_flexible {
+        @apply min-w-[1.5vw] min-h-[1.5vw] gap-[.5vw] text-[1vw] leading-[1];
+
+        svg {
+            @apply size-[1.2vw];
+        }
+    }
+
+    &:hover {
+        @apply bg-stone-500;
+    }
+}
+
 // SIZES
 
 .size_default {

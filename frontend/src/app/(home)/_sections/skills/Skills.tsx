@@ -51,7 +51,6 @@ const Skills = () => {
           </SkillHeader>
           <SkillContent>
             <Skill>ASP.NET Core</Skill>
-            <Skill>C#</Skill>
             <Skill>EF Core</Skill>
             <Skill>NGinx</Skill>
             <Skill>OAuth2.0</Skill>
@@ -76,6 +75,14 @@ const Skills = () => {
           <SkillContent>
             <Skill>WPF</Skill>
             <Skill>Win forms</Skill>
+          </SkillContent>
+        </SkillGroup>
+        <SkillGroup index={5}>
+          <SkillHeader>
+            <h3 className={styles.group__title}>Bots</h3>
+          </SkillHeader>
+          <SkillContent>
+            <Skill>Telegramper, C#</Skill>
           </SkillContent>
         </SkillGroup>
       </div>

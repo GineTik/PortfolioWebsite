@@ -1,10 +1,13 @@
 "use client"
-import { Button } from "@/app/_components/ui/button/Button"
+import { Button, buttonVariants } from "@/app/_components/ui/button/Button"
+import AnimatedLink from "@/app/_components/ui/link/Link"
+import { Popover, PopoverContent, PopoverTrigger } from "@/app/_components/ui/popover/Popover"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { useState } from "react"
+import { IoLogoFigma, IoRocket } from "react-icons/io5"
 import styles from "./Skill.module.scss"
 
 if (typeof window !== "undefined") {
@@ -23,15 +26,6 @@ const SkillGroup = ({children, index}: SkillGroupProps) => {
     
     const [borderId, _] = useState("d" + crypto.randomUUID())
     useGSAP(() => {
-        // gsap.to(`#${borderId}`, {
-        //     scrollTrigger: {
-        //         trigger: `#${borderId}`,
-        //         end: "top 30%",
-        //         scrub: true
-        //     },
-        //     y: 0,
-        // })
-
         gsap.from(`#${borderId}`, {
             scrollTrigger: {
                 trigger: `#${borderId}`,
@@ -112,9 +106,29 @@ type SkillProps = SkillChildrenProps
 
 const Skill = ({children}: SkillProps) => {
     return (
-        <Button variant="skill" size="flexible">
-            {children}
-        </Button>
+        <Popover>
+            <PopoverTrigger asChild>
+                <Button variant="skill" size="flexible">
+                    {children}
+                </Button>
+            </PopoverTrigger>
+            <PopoverContent className={styles.skill__popover} side="top" align="center">
+                <div className={styles.popover__content}>
+                    <div className={styles.popover__text}>{children} - It is framework similar to a ASP.Net Core. Framework contains services, middlewares, configuration, controllers(executors) and other</div>
+                    <div className={styles.popover__links}>
+                        <AnimatedLink href={"https://www.figma.com/"} target="_blank" className={buttonVariants({ variant: "popover_link", size: "flexible" })}>
+                            <IoLogoFigma />
+                        </AnimatedLink>
+                        <AnimatedLink>
+                            <Button variant="popover_link" size="flexible">
+                                <IoRocket />
+                                Other link
+                            </Button>
+                        </AnimatedLink>
+                    </div>
+                </div>
+            </PopoverContent>
+        </Popover>
     )
 }
 

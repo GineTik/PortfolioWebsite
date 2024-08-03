@@ -21,3 +21,46 @@
         }
     }
 }
+
+.skill__popover {
+    @apply bg-stone-900 rounded-[10px] overflow-hidden z-10 transition-all border-[.2vw] border-stone-800 max-w-[30vw] text-[1.2vw];
+
+    &[data-state="open"] {
+        @apply animate-[show1_150ms]
+    }
+
+    &[data-state="closed"] {
+        @apply animate-[hide_150ms]
+    }
+
+    .popover__content {
+        @apply px-[1vw] py-[.8vw] rounded-b-[15px] z-10;
+
+        .popover__text {
+            @apply flex items-center gap-[.5vw];
+        }
+
+        .popover__links {
+            @apply mt-[.5vw] flex gap-[.5vw];
+        }
+    }
+
+    @keyframes show1 {
+        0% {
+            opacity: 0;
+            transform: translateY(2vw);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes hide {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+}

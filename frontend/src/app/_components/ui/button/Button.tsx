@@ -10,7 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: cn(styles.variant_default, "button"),
-        skill: styles.variant_skill
+        skill: styles.variant_skill,
+        popover_link: styles.variant_popover_link
       },
       size: {
         default: styles.size_default,
