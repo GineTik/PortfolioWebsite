@@ -51,4 +51,8 @@
             }
         }
     }
+
+    .section__groups {
+        @apply flex flex-col justify-center items-start gap-[3vw] mt-[10vw];
+    }
 }

@@ -12,6 +12,20 @@
     }
 }
 
+.variant_skill {
+    @apply bg-stone-800 rounded-[10px] ring-offset-[.2vw] ring-offset-stone-900 ring-[.2vw] ring-stone-800 transition flex items-center gap-[.6vw];
+
+    &:hover {
+        @apply ring-lime-400;
+    }
+
+    &.size_flexible {
+        svg {
+            @apply size-[1.6vw];
+        }
+    }
+}
+
 // SIZES
 
 .size_default {

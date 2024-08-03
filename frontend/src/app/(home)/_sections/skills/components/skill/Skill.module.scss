@@ -1,0 +1,23 @@
+.group {
+    @apply w-full relative;
+
+    .group__border {
+        @apply stroke-lime-400 translate-y-[2.5vw];
+    }
+
+    .group__inner {
+        @apply flex;
+
+        .group__number {
+            @apply ml-[2vw] text-lime-400 font-black text-[2.5vw] -mt-[1vw] leading-[1];
+        }
+
+        .group__header {
+            @apply flex -mt-[1vw] font-black uppercase ml-[2vw] text-[4vw] leading-[1] translate-x-[5vw] opacity-0;
+        }
+    
+        .group__content {
+            @apply w-1/2 ml-auto mt-[3vw] flex gap-[1.4vw] flex-wrap translate-x-[10vw] opacity-0;
+        }
+    }
+}

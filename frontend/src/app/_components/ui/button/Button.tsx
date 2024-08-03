@@ -9,11 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: cn(styles.variant_default, "button")
+        default: cn(styles.variant_default, "button"),
+        skill: styles.variant_skill
       },
       size: {
         default: styles.size_default,
-        flexible: styles.size_flexible
+        flexible: styles.size_flexible,
       },
     },
     defaultVariants: {

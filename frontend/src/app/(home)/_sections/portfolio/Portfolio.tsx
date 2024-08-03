@@ -1,8 +1,8 @@
 
 const Portfolio = () => {
   return (
-    <div>
-      
+    <div className="min-h-[1000px]">
+      tesxt
     </div>
   )
 }

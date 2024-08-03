@@ -1,12 +1,14 @@
+import { cn } from "@/lib/utils"
 import styles from "./BgFilteredText.module.scss"
 
 type BgFilteredTextProps = {
     children: any
+    className?: string
 }
 
-const BgFilteredText = ({children}: BgFilteredTextProps) => {
+const BgFilteredText = ({children, className}: BgFilteredTextProps) => {
   return (
-    <div className={styles.text}>
+    <div className={cn(styles.text, className)}>
         <span>{children}</span>
         <svg
             style={{

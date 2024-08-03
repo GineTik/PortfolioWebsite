@@ -1,36 +1,12 @@
 "use client"
-import { useGSAP } from "@gsap/react"
-import { gsap } from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
 import { useRef } from "react"
 import { RiArrowDownSLine } from "react-icons/ri"
 import styles from "./Skills.module.scss"
-
-gsap.registerPlugin(ScrollTrigger, useGSAP)
+import AnimationText from "./components/animation-text/AnimationText"
+import { Skill, SkillContent, SkillGroup, SkillHeader } from "./components/skill/Skill"
 
 const Skills = () => {
   const titleRef = useRef<HTMLHeadingElement>(null)
-
-  useGSAP(() => {
-    const getOptions = (trigger: string, percentToTop: number) => ({
-      scrollTrigger: {
-        trigger: trigger,
-        end: `top ${percentToTop}%`,
-        scrub: .5
-      },
-      opacity: 1,
-      x: 0,
-      y: 0,
-      rotationX: 0,
-    });
-
-    [60, 60, 60].map((o, i) => 
-      gsap.to(
-        "." + styles.title__row + `:nth-child(${i+1})`,
-        getOptions("." + styles.title__row + `:nth-child(${i+1})`, o)
-      ))
-    gsap.to("." + styles.title__green, getOptions("." + styles.title__green, 0))
-  })
 
   return (
     <div className={styles.section}>
@@ -40,17 +16,69 @@ const Skills = () => {
         <RiArrowDownSLine />
       </div>
       <h2 className={styles.section__title} ref={titleRef}>
-        <div className={styles.title__row}>
+        <AnimationText className={styles.title__row}>
           <span className={styles.title__outline}>What</span>
-        </div>
-        <div className={styles.title__row}>
+        </AnimationText>
+        <AnimationText className={styles.title__row}>
           <span className={styles.title__white}>can</span>
-        </div>
-        <div className={styles.title__row}>
+        </AnimationText>
+        <AnimationText className={styles.title__row}>
           <span className={styles.title__white}>I</span>
-          <span className={styles.title__green}>do with my skills?</span>
-        </div>
+          <AnimationText className={styles.title__green}>do with my skills?</AnimationText>
+        </AnimationText>
       </h2>
+      <div className={styles.section__groups}>
+        <SkillGroup index={1}>
+          <SkillHeader>
+            <h3 className={styles.group__title}>Front-end</h3>
+          </SkillHeader>
+          <SkillContent>
+            <Skill>React/Next.js</Skill>
+            <Skill>Redux</Skill>
+            <Skill>TypeScript</Skill>
+            <Skill>
+              <span>Shacdn/ui</span>
+              {/* <FaLink /> */}
+            </Skill>
+            <Skill>Gsap</Skill>
+            <Skill>SCSS</Skill>
+            <Skill>Tailwind</Skill>
+          </SkillContent>
+        </SkillGroup>
+        <SkillGroup index={2}>
+          <SkillHeader>
+            <h3 className={styles.group__title}>Back-end</h3>
+          </SkillHeader>
+          <SkillContent>
+            <Skill>ASP.NET Core</Skill>
+            <Skill>C#</Skill>
+            <Skill>EF Core</Skill>
+            <Skill>NGinx</Skill>
+            <Skill>OAuth2.0</Skill>
+            <Skill>Websocket</Skill>
+            <Skill>RabbitMq</Skill>
+            <Skill>Kafka</Skill>
+            <Skill>Redis</Skill>
+          </SkillContent>
+        </SkillGroup>
+        <SkillGroup index={3}>
+          <SkillHeader>
+            <h3 className={styles.group__title}>Web design</h3>
+          </SkillHeader>
+          <SkillContent>
+            <Skill>Figma</Skill>
+          </SkillContent>
+        </SkillGroup>
+        <SkillGroup index={4}>
+          <SkillHeader>
+            <h3 className={styles.group__title}>Desktop</h3>
+          </SkillHeader>
+          <SkillContent>
+            <Skill>WPF</Skill>
+            <Skill>Win forms</Skill>
+          </SkillContent>
+        </SkillGroup>
+      </div>
     </div>
   )
 }
