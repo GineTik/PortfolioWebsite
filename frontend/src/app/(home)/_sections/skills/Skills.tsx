@@ -51,10 +51,13 @@ const Skills = () => {
           </SkillHeader>
           <SkillContent>
             <Skill>ASP.NET Core</Skill>
+            <Skill>Web Api</Skill>
+            <Skill>Swagger</Skill>
             <Skill>EF Core</Skill>
             <Skill>NGinx</Skill>
             <Skill>OAuth2.0</Skill>
             <Skill>Websocket</Skill>
+            <Skill>Microservices</Skill>
             <Skill>RabbitMq</Skill>
             <Skill>Kafka</Skill>
             <Skill>Redis</Skill>
@@ -66,6 +69,7 @@ const Skills = () => {
           </SkillHeader>
           <SkillContent>
             <Skill>Figma</Skill>
+            <Skill>React icons</Skill>
           </SkillContent>
         </SkillGroup>
         <SkillGroup index={4}>
@@ -83,6 +87,7 @@ const Skills = () => {
           </SkillHeader>
           <SkillContent>
             <Skill>Telegramper, C#</Skill>
+            <Skill>Telegram Bot Api</Skill>
           </SkillContent>
         </SkillGroup>
       </div>

@@ -13,7 +13,7 @@ const Providers = ({children}: ProvidersProps) => {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <ReactLenis root options={{ lerp: 0, duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) }}>
+                <ReactLenis root options={{ lerp: 0, duration: 2 }}>
                     {children}
                 </ReactLenis>
             </PersistGate>

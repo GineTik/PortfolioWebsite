@@ -1,0 +1,7 @@
+.slider {
+    @apply -mx-[10px] overflow-hidden h-[50vw] flex justify-start items-center;
+
+    .slider__content {
+        @apply w-auto flex gap-[6vw] h-[35vw];
+    }
+}

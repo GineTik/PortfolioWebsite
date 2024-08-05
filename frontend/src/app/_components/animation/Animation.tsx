@@ -13,9 +13,9 @@ const AnimationComponent = forwardRef<HTMLDivElement, AnimationComponentProps>((
 
     const [id, _] = useState("d" + crypto.randomUUID())
     useEffect(() => {
+        const target = `#${id}${animateChildren ? " > *" : ""}`
         animate && animate({
-            id: id,
-            animateChildren: animateChildren ?? false
+            targetSelector: target,
         })
     }, [animate])
 

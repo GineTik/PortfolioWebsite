@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	images: {
+		domains: ['img001.prntscr.com', 'rise2.studio']
+	}
+}
 
-export default nextConfig;
+export default nextConfig

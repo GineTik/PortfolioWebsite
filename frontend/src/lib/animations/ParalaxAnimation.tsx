@@ -5,23 +5,19 @@ import { AnimationFunction, AnimationProps } from "./AnimationFunction"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
-const HeadingAnimation = (({targetSelector}: AnimationProps) => {
+const SliderAnimation = (({targetSelector}: AnimationProps) => {
+    
     gsap.fromTo(targetSelector, {
-        opacity: 0,
-        translateX: "15%",
-        translateY: "15%",
-        rotationX: "-60deg",
+        top: "-200%",
     }, {
         scrollTrigger: {
             trigger: targetSelector,
-            end: `top 50%`,
-            scrub: .5
+            start: "top bottom",
+            end: `bottom top`,
+            scrub: true,
         },
-        opacity: 1,
-        translateX: 0,
-        translateY: 0,
-        rotationX: 0 
+        top: "0%",
     })
 }) as AnimationFunction
 
-export default HeadingAnimation
+export default SliderAnimation

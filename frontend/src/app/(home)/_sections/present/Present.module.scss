@@ -80,6 +80,15 @@
                 .description__text {
                     
                 }
+
+                .description__experience {
+                    @apply text-[2vw] text-white/50 font-black mt-[2vw] flex items-center gap-[1.2vw] pl-[1vw];
+
+                    &::before {
+                        content: '';
+                        @apply bg-white/50 min-w-[1vw] h-[1vw] rounded-full;
+                    }
+                }
             }
 
             .section__media {

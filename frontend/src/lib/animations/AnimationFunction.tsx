@@ -1,6 +1,5 @@
 type AnimationProps = {
-    id: string
-    animateChildren: boolean
+    targetSelector: string
 }
 
 type AnimationFunction = (props: AnimationProps) => void
