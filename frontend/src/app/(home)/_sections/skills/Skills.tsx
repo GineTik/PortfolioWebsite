@@ -1,13 +1,11 @@
 "use client"
-import { useRef } from "react"
+import { Title, TitleGreen, TitleOutline, TitleRow, TitleWhite } from "@/app/_components/text/Title"
+import HeadingAnimation from "@/lib/animations/HeadingAnimation"
 import { RiArrowDownSLine } from "react-icons/ri"
 import styles from "./Skills.module.scss"
-import AnimationText from "./components/animation-text/AnimationText"
 import { Skill, SkillContent, SkillGroup, SkillHeader } from "./components/skill/Skill"
 
 const Skills = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null)
-
   return (
     <div className={styles.section}>
       <div className={styles.section__icon}>
@@ -15,18 +13,20 @@ const Skills = () => {
         <RiArrowDownSLine />
         <RiArrowDownSLine />
       </div>
-      <h2 className={styles.section__title} ref={titleRef}>
-        <AnimationText className={styles.title__row}>
-          <span className={styles.title__outline}>What</span>
-        </AnimationText>
-        <AnimationText className={styles.title__row}>
-          <span className={styles.title__white}>can</span>
-        </AnimationText>
-        <AnimationText className={styles.title__row}>
-          <span className={styles.title__white}>I</span>
-          <AnimationText className={styles.title__green}>do with my skills?</AnimationText>
-        </AnimationText>
-      </h2>
+
+      <Title>
+        <TitleRow>
+          <TitleOutline>What</TitleOutline>
+        </TitleRow>
+        <TitleRow>
+          <TitleWhite>can</TitleWhite>
+        </TitleRow>
+        <TitleRow>
+          <TitleWhite>I</TitleWhite>
+          <TitleGreen className={styles.title__green} animate={HeadingAnimation}>do with my skills?</TitleGreen>
+        </TitleRow>
+      </Title>
+
       <div className={styles.section__groups}>
         <SkillGroup index={1}>
           <SkillHeader>

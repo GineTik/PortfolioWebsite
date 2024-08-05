@@ -1,0 +1,16 @@
+.title__explore {
+    @apply pl-[2.5vw] w-[25vw] flex flex-col items-start gap-[1.5vw];
+
+    span {
+        @apply font-normal text-[1.5vw] text-white/60;
+        text-transform: none;
+    }
+
+    a {
+        @apply text-black gap-[.7vw] leading-[.7];
+    }
+
+    svg {
+        @apply size-[1.5vw];
+    }
+}

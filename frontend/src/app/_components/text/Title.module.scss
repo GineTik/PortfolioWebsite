@@ -1,0 +1,29 @@
+.title {
+    @apply font-black uppercase;
+
+    .title__row {
+        @apply flex items-center gap-[.6vw];
+    }
+
+    .title__white,
+    .title__outline,
+    .title__green {
+        @apply text-[15vw] leading-[.8] tracking-tighter;
+    }
+
+    .title__white {
+        @apply text-white;
+    }
+
+    .title__green {
+        @apply text-primary;
+    }
+
+    .title__outline {
+        @apply text-stone-900;
+        text-shadow: -1px -1px 0 theme('colors.white'), 
+                    1px -1px 0 theme('colors.white'), 
+                    -1px 1px 0 theme('colors.white'),
+                    1px 1px 0 theme('colors.white');
+    }
+}
