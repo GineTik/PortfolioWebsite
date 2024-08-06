@@ -1,27 +1,28 @@
 import AnimationComponent, { AnimationComponentProps } from "@/app/_components/animation/Animation"
 import HeadingAnimation from "@/lib/animations/HeadingAnimation"
 import { cn } from "@/lib/utils"
+import { AnchorHTMLAttributes } from "react"
 import styles from "./Title.module.scss"
 
 type TitleChildrenProps = {
 	children: any
 }
 
-type TitleProps = TitleChildrenProps
+type TitleProps = AnchorHTMLAttributes<HTMLHeadingElement> & TitleChildrenProps
 
-const Title = ({children}: TitleProps) => {
+const Title = ({children, className, ...props}: TitleProps) => {
     return (
-        <h2 className={styles.title}>
+        <h2 className={cn(styles.title, className)} {...props}>
 			{children}
         </h2>
     )
 }
 
-type TitleRowProps = TitleChildrenProps
+type TitleRowProps = AnchorHTMLAttributes<HTMLDivElement> & TitleChildrenProps
 
-const TitleRow = ({children}: TitleRowProps) => {
+const TitleRow = ({children, className, ...props}: TitleRowProps) => {
     return (
-        <AnimationComponent className={styles.title__row} animate={HeadingAnimation}>
+        <AnimationComponent className={cn(styles.title__row, className)} animate={HeadingAnimation} {...props}>
         	{children}
         </AnimationComponent>
     )
@@ -37,11 +38,11 @@ const TitleOutline = ({children}: TitleOutlineProps) => {
     )
 }
 
-type TitleWhiteProps = TitleChildrenProps
+type TitleWhiteProps = AnchorHTMLAttributes<HTMLSpanElement> & TitleChildrenProps
 
-const TitleWhite = ({children}: TitleWhiteProps) => {
+const TitleWhite = ({children, className, ...props}: TitleWhiteProps) => {
     return (
-        <span className={styles.title__white}>
+        <span className={cn(styles.title__white, className)} {...props}>
 			{children}
         </span>
     )

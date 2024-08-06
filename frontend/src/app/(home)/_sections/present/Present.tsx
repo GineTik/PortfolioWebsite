@@ -8,7 +8,7 @@ import { IoIosRocket } from "react-icons/io"
 import { TiStarburst } from "react-icons/ti"
 import styles from "./Present.module.scss"
 
-const Present = () => {
+const PresentSection = () => {
   const movingRowRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
   const nameRef = useRef<HTMLDivElement>(null)
@@ -98,4 +98,4 @@ const Present = () => {
   )
 }
 
-export default Present
+export default PresentSection

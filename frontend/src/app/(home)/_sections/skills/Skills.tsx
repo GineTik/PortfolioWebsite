@@ -5,7 +5,7 @@ import { RiArrowDownSLine } from "react-icons/ri"
 import styles from "./Skills.module.scss"
 import { Skill, SkillContent, SkillGroup, SkillHeader } from "./components/skill/Skill"
 
-const Skills = () => {
+const SkillsSection = () => {
   return (
     <div className={styles.section}>
       <div className={styles.section__icon}>
@@ -95,4 +95,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default SkillsSection

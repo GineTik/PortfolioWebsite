@@ -1,7 +1,7 @@
 // VARIANTS
 
 .variant_default {
-    @apply relative bg-lime-400 rounded-full flex items-center justify-center uppercase font-semibold;
+    @apply relative bg-lime-400 rounded-full flex items-center justify-center uppercase font-semibold text-black;
 
     svg {
         @apply text-black;

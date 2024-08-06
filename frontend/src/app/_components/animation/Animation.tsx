@@ -2,7 +2,7 @@ import { AnimationFunction } from "@/lib/animations/AnimationFunction"
 import { forwardRef, useEffect, useState } from "react"
 
 type AnimationComponentProps = 
-React.AnchorHTMLAttributes<HTMLHeadingElement> &
+React.AnchorHTMLAttributes<HTMLDivElement> &
 {
     children: any
     animate?: AnimationFunction

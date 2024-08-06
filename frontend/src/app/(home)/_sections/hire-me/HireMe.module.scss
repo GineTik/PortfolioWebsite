@@ -1,0 +1,19 @@
+.section {
+    @apply relative py-[30vw];
+
+    .section__background {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[60vw] -z-10;
+
+        svg {
+            @apply w-full h-full -z-10 fill-stone-800;
+        }
+    }
+
+    .section__together {
+        @apply text-end block w-full;
+    }
+
+    .section__button {
+        @apply flex justify-center w-full;
+    }
+}
