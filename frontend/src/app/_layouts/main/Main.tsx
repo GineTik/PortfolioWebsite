@@ -1,3 +1,4 @@
+import styles from "./Main.module.scss"
 
 type MainProps = {
     children: any
@@ -5,7 +6,7 @@ type MainProps = {
 
 const Main = ({children}: MainProps) => {
   return (
-    <div>
+    <div className={styles.main}>
       {children}
     </div>
   )

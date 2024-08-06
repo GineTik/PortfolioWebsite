@@ -3,11 +3,11 @@ import AnimationComponent from "@/app/_components/animation/Animation"
 import { Title, TitleGreen, TitleRow, TitleWhite } from "@/app/_components/text/Title"
 import { buttonVariants } from "@/app/_components/ui/button/Button"
 import AnimatedLink from "@/app/_components/ui/link/Link"
+import PortfolioProject from "@/app/_components/ui/portfolio-project/PortfolioProject"
 import { Routes } from "@/configs/Routes.config"
 import HeadingAnimation from "@/lib/animations/HeadingAnimation"
 import { RiSearchLine } from "react-icons/ri"
 import styles from "./Portfolio.module.scss"
-import SliderItem from "./components/slider/item/SliderItem"
 
 const PortfolioSection = () => {
   return (
@@ -30,27 +30,27 @@ const PortfolioSection = () => {
       </Title>
 
       <div className={styles.section__gallery}>
-        <SliderItem 
+        <PortfolioProject 
           imageSrc={"https://img001.prntscr.com/file/img001/E_lWuO4zSJeGT6D-ePyuew.png"} 
           index={1} 
           title={"Telegramper"} 
         />
-        <SliderItem 
+        <PortfolioProject 
           imageSrc={"https://rise2.studio/_next/image?url=https%3A%2F%2Fcms.rise2.studio%2Fwp-content%2Fuploads%2F2023%2F10%2FFeatured_02-1.webp&w=1920&q=75"} 
           index={2} 
           title={"Portfolio"} 
         />
-        <SliderItem 
+        <PortfolioProject 
           imageSrc={"https://img001.prntscr.com/file/img001/PI_Q9DOhSWCpvZBOcgShyA.png"} 
           index={3} 
           title={"StudyUp"} 
         />
-        <SliderItem 
+        <PortfolioProject 
           imageSrc={"https://img001.prntscr.com/file/img001/E_lWuO4zSJeGT6D-ePyuew.png"} 
           index={4} 
           title={"DropshippingBridge"} 
         />
-        <SliderItem 
+        <PortfolioProject 
           imageSrc={"https://rise2.studio/_next/image?url=https%3A%2F%2Fcms.rise2.studio%2Fwp-content%2Fuploads%2F2023%2F10%2FFeatured_02-1.webp&w=1920&q=75"} 
           index={5} 
           title={"TradeHelper"} 

@@ -1,5 +1,5 @@
 
-const page = () => {
+const HireMePage = () => {
   return (
     <div className="pt-[10vw]">
       Hire me
@@ -7,4 +7,4 @@ const page = () => {
   )
 }
 
-export default page
+export default HireMePage

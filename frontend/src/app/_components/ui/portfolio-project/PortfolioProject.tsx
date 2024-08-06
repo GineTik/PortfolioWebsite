@@ -3,16 +3,16 @@ import AnimatedLink from "@/app/_components/ui/link/Link"
 import { Routes } from "@/configs/Routes.config"
 import ParalaxAnimation from "@/lib/animations/ParalaxAnimation"
 import Image from "next/image"
-import styles from "./SliderItem.module.scss"
+import styles from "./PortfolioProject.module.scss"
 
-type SliderItemProps = 
+type PortfolioProjectProps = 
 {
 	imageSrc: string
 	index: number
 	title: string
 }
 
-const SliderItem = ({index, title, imageSrc}: SliderItemProps) => {
+const PortfolioProject = ({index, title, imageSrc}: PortfolioProjectProps) => {
   return (
     <AnimatedLink href={Routes.project(0)} className="cursor_trigger">
 		<AnimationComponent className={styles.item}>
@@ -33,6 +33,6 @@ const SliderItem = ({index, title, imageSrc}: SliderItemProps) => {
   )
 }
 
-export default SliderItem
-export type { SliderItemProps }
+export default PortfolioProject
+export type { PortfolioProjectProps as SliderItemProps }
 
