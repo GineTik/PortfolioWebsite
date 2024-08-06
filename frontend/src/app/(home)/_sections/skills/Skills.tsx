@@ -1,9 +1,9 @@
 "use client"
+import { Skill, SkillContent, SkillGroup, SkillGroupTitle, SkillHeader } from "@/app/_components/skill/Skill"
 import { Title, TitleGreen, TitleOutline, TitleRow, TitleWhite } from "@/app/_components/text/Title"
 import HeadingAnimation from "@/lib/animations/HeadingAnimation"
 import { RiArrowDownSLine } from "react-icons/ri"
 import styles from "./Skills.module.scss"
-import { Skill, SkillContent, SkillGroup, SkillHeader } from "./components/skill/Skill"
 
 const SkillsSection = () => {
   return (
@@ -30,7 +30,7 @@ const SkillsSection = () => {
       <div className={styles.section__groups}>
         <SkillGroup index={1}>
           <SkillHeader>
-            <h3 className={styles.group__title}>Front-end</h3>
+            <SkillGroupTitle>Front-end</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
             <Skill>React/Next.js</Skill>
@@ -47,7 +47,7 @@ const SkillsSection = () => {
         </SkillGroup>
         <SkillGroup index={2}>
           <SkillHeader>
-            <h3 className={styles.group__title}>Back-end</h3>
+            <SkillGroupTitle>Back-end</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
             <Skill>ASP.NET Core</Skill>
@@ -65,7 +65,7 @@ const SkillsSection = () => {
         </SkillGroup>
         <SkillGroup index={3}>
           <SkillHeader>
-            <h3 className={styles.group__title}>Web design</h3>
+            <SkillGroupTitle>Web design</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
             <Skill>Figma</Skill>
@@ -74,7 +74,7 @@ const SkillsSection = () => {
         </SkillGroup>
         <SkillGroup index={4}>
           <SkillHeader>
-            <h3 className={styles.group__title}>Desktop</h3>
+            <SkillGroupTitle>Desktop</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
             <Skill>WPF</Skill>
@@ -83,7 +83,7 @@ const SkillsSection = () => {
         </SkillGroup>
         <SkillGroup index={5}>
           <SkillHeader>
-            <h3 className={styles.group__title}>Bots</h3>
+            <SkillGroupTitle>Bots</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
             <Skill>Telegramper, C#</Skill>

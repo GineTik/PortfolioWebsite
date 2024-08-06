@@ -1,5 +1,5 @@
 .title {
-    @apply font-black uppercase;
+    @apply font-black uppercase text-[15vw];
 
     .title__row {
         @apply flex items-center gap-[.6vw];
@@ -8,7 +8,7 @@
     .title__white,
     .title__outline,
     .title__green {
-        @apply text-[15vw] leading-[.8] tracking-tighter;
+        @apply leading-[.8] tracking-tighter;
     }
 
     .title__white {

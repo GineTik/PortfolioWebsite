@@ -13,7 +13,11 @@
         }
 
         .group__header {
-            @apply flex -mt-[1vw] font-black uppercase ml-[2vw] text-[4vw] leading-[1] translate-x-[5vw] opacity-0;
+            @apply flex flex-col items-start -mt-[1vw] ml-[2vw] translate-x-[5vw] opacity-0;
+        }
+
+        .group__title {
+            @apply font-black uppercase text-[4vw] leading-[1];
         }
     
         .group__content {

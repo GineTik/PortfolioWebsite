@@ -16,7 +16,7 @@ const AnimatedLink = ({className, onClick, href, ...props}: AnimatedLinkProps) =
         
         enableLoadingTransition()
         setTimeout(() => {
-            router.push(href)
+            router.push(href, {scroll: true})
         }, 1000)
         onClick && onClick(e)
 

@@ -77,6 +77,17 @@ const SkillHeader = ({children}: SkillHeaderProps) => {
     )
 }
 
+type SkillGroupTitleProps = SkillChildrenProps
+
+const SkillGroupTitle = ({children}: SkillGroupTitleProps) => {
+    return (
+        <h2 className={styles.group__title}>
+            {children}
+        </h2>
+    )
+}
+
+
 type SkillContentProps = SkillChildrenProps
 
 const SkillContent = ({children}: SkillContentProps) => {
@@ -132,5 +143,5 @@ const Skill = ({children}: SkillProps) => {
     )
 }
 
-export { Skill, SkillContent, SkillGroup, SkillHeader }
+export { Skill, SkillContent, SkillGroup, SkillGroupTitle, SkillHeader }
 

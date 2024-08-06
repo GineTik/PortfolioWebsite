@@ -4,11 +4,13 @@ import { cn } from "@/lib/utils"
 import { AnchorHTMLAttributes } from "react"
 import styles from "./Title.module.scss"
 
-type TitleChildrenProps = {
+type TitleChildrenProps = 
+AnchorHTMLAttributes<HTMLSpanElement> &
+{
 	children: any
 }
 
-type TitleProps = AnchorHTMLAttributes<HTMLHeadingElement> & TitleChildrenProps
+type TitleProps = TitleChildrenProps
 
 const Title = ({children, className, ...props}: TitleProps) => {
     return (
@@ -18,7 +20,7 @@ const Title = ({children, className, ...props}: TitleProps) => {
     )
 }
 
-type TitleRowProps = AnchorHTMLAttributes<HTMLDivElement> & TitleChildrenProps
+type TitleRowProps = TitleChildrenProps
 
 const TitleRow = ({children, className, ...props}: TitleRowProps) => {
     return (
@@ -30,15 +32,15 @@ const TitleRow = ({children, className, ...props}: TitleRowProps) => {
 
 type TitleOutlineProps = TitleChildrenProps
 
-const TitleOutline = ({children}: TitleOutlineProps) => {
+const TitleOutline = ({children, className, ...props}: TitleOutlineProps) => {
     return (
-        <span className={styles.title__outline}>
+        <span className={cn(styles.title__outline, className)} {...props}>
 			{children}
         </span>
     )
 }
 
-type TitleWhiteProps = AnchorHTMLAttributes<HTMLSpanElement> & TitleChildrenProps
+type TitleWhiteProps = TitleChildrenProps
 
 const TitleWhite = ({children, className, ...props}: TitleWhiteProps) => {
     return (
