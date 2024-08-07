@@ -5,7 +5,7 @@ import styles from "./TechnologiesSection.module.scss"
 
 const TechnologiesSection = () => {
   return (
-    <div className={styles.page__technologies}>
+    <div className={styles.section}>
         <SkillGroup index={1}>
           <SkillHeader>
             <SkillGroupTitle>Front-end</SkillGroupTitle>
@@ -27,14 +27,12 @@ const TechnologiesSection = () => {
             <SkillGroupTitle>Back-end</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
-            <Skill>React/Next.js</Skill>
-            <Skill>Redux</Skill>
-            <Skill>TypeScript</Skill>
-            <Skill>
-              <span>Shacdn/ui</span>
-            </Skill>
-            <Skill>Gsap</Skill>
-            <Skill>SCSS</Skill>
+            <Skill>Microservices</Skill>
+            <Skill>Clean architecture</Skill>
+            <Skill>Docker</Skill>
+            <Skill>NGinx</Skill>
+            <Skill>Redis</Skill>
+            <Skill>RabbitMq</Skill>
             <Skill>Tailwind</Skill>
           </SkillContent>
         </SkillGroup>

@@ -1,4 +1,5 @@
 .page {
+    @apply flex flex-col gap-[10vw];
     .page__title {
         @apply text-[10vw] whitespace-normal;
 

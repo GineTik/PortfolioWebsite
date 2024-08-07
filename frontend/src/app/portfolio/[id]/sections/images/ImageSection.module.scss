@@ -1,0 +1,15 @@
+.section {
+    @apply flex gap-[2vw] justify-center;
+
+    .section__column {
+        @apply w-[48vw] h-[48vw] bg-stone-800 rounded-[2vw] overflow-hidden relative;
+
+        .section__image {
+            @apply absolute w-full left-1/2 -translate-x-1/2;
+
+            img {
+                @apply w-full h-full object-cover;
+            }
+        }
+    }
+}
