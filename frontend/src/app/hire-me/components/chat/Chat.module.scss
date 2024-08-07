@@ -1,0 +1,47 @@
+.component {
+    @apply bg-stone-800/50 w-full h-full rounded-[1.5vw] flex flex-col divide-y divide-white/20;
+
+    .component__header {
+        @apply flex gap-[1.5vw] items-center px-[1vw] py-[1vw];
+
+        .component__avatar {
+            @apply w-[5vw] h-[5vw] object-cover rounded-full;
+        }
+
+        .component__header_column {
+            @apply flex flex-col justify-center;
+
+            .component__name {
+                @apply text-[1.5vw] leading-[1];
+            }
+
+            .component__online {
+                @apply text-lime-400 text-[1.2vw];
+            }
+        }
+    }
+
+    .component__messages {
+        @apply flex-1;
+    }
+
+    .component__inputs {
+        @apply flex gap-[1vw] p-[1vw];
+
+        .component__input {
+            @apply flex-1 bg-stone-700/40 rounded-2xl text-white/50 px-[1vw] py-[.7vw] text-[1.3vw] flex items-center;
+        }
+
+        .component__send {
+            @apply size-[4vw] bg-stone-700/40 rounded-2xl flex items-center justify-center transition;
+
+            svg {
+                @apply size-[1.6vw];
+            }
+
+            &:hover {
+                @apply bg-lime-400 text-black;
+            }
+        }
+    }
+}
