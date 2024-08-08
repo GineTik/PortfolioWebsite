@@ -59,7 +59,6 @@ const PresentSection = () => {
             <BgFilteredText>
               20 years old. I'm a university student and a passionate Fullstack developer with extensive knowledge of web technologies. Although I don't have any commercial experience yet, I have created several full-fledged applications that demonstrate my skills in front-end and back-end development. I have experience working with databases and various development tools, and I am eager to apply my knowledge in real projects
             </BgFilteredText>
-            <div className={styles.description__experience}>1 year experience</div>
           </div>
           <div className={`${styles.section__media} cursor_trigger`}>
             <div className={styles.media__wrapper}>

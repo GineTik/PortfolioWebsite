@@ -6,6 +6,7 @@ import { SiGmail } from "react-icons/si"
 import { Title, TitleGreen, TitleRow, TitleWhite } from "../_components/text/Title"
 import { buttonVariants } from "../_components/ui/button/Button"
 import Chat from "./components/chat/Chat"
+import TimeElapsed from "./components/time-elapsed/TimeElapsed"
 import styles from "./HireMePage.module.scss"
 
 const HireMePage = () => {
@@ -19,7 +20,7 @@ const HireMePage = () => {
           </TitleRow>
         </Title>
         
-        <div className={styles.section__information}>
+        <div className={styles.section__contacts}>
           <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="#">
             <BiLogoTelegram />
             Telegram
@@ -35,6 +36,25 @@ const HireMePage = () => {
         </div>
 
         <div className={styles.section__looking_job}>Looking for a job</div>
+
+        <div className={styles.section__information}>
+          <div>
+            <div>Experience</div>
+            <TimeElapsed date={new Date(2023, 7, 1)} />
+          </div>
+          <div>
+            <div>Desired qualification</div>
+            <div>Junior</div>
+          </div>
+          <div>
+            <div>Mode</div>
+            <div>Online, offline, hybrid</div>
+          </div>
+          <div>
+            <div>Location</div>
+            <div>Kyiv, Khmelnytsky</div>
+          </div>
+        </div>
       </div>
       <div className={styles.section__column}>
         <Chat />
