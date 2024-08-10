@@ -1,3 +1,4 @@
+"use client"
 import { AnimationFunction } from "@/lib/animations/AnimationFunction"
 import { forwardRef, useEffect, useState } from "react"
 

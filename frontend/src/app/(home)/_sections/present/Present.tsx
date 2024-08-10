@@ -18,10 +18,10 @@ const PresentSection = () => {
       if (!movingRowRef || !movingRowRef.current)
         return
 
-      const scrolled = window.pageYOffset;
-      const left = scrolled / 2;
+      const scrolled = window.scrollY
+      const left = scrolled / 2
     
-      movingRowRef.current.style.transform = `translate3d(${left}px, 0px, 0px)`;
+      movingRowRef.current.style.transform = `translate3d(${left}px, 0px, 0px)`
     })
   }, [movingRowRef])
 

@@ -3,12 +3,11 @@ import SliderAnimation from "@/lib/animations/SliderAnimation"
 import { cn } from "@/lib/utils"
 import { AnchorHTMLAttributes, ReactElement } from "react"
 import styles from "./Slider.module.scss"
-import { SliderItemProps } from "./item/SliderItem"
 
 type SliderProps = 
 AnchorHTMLAttributes<HTMLDivElement> & 
 {
-    children: ReactElement<SliderItemProps>[]
+    children: ReactElement[]
 }
 
 // const SliderContent = ({children}: any) => {
