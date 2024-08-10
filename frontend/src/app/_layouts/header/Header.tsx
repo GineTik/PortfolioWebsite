@@ -1,5 +1,6 @@
 "use client"
 import { Button, buttonVariants } from "@/app/_components/ui/button/Button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/app/_components/ui/dropdown-menu/DropdownMenu"
 import AnimatedLink from "@/app/_components/ui/link/Link"
 import { Routes } from "@/configs/Routes.config"
 import { cn } from "@/lib/utils"
@@ -48,13 +49,27 @@ const Header = () => {
       </div>
       <div className={cn(styles.header__right_side, "buttons")}>
         <AnimatedLink href={Routes.hireMe} className={buttonVariants({ size: "flexible" })}>
-            Hire me
-          </AnimatedLink>
-        <AnimatedLink href="/menu">
-          <Button size="flexible">
-            <BiMenu />
-          </Button>
+          Hire me
         </AnimatedLink>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button size="flexible">
+              <BiMenu />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <AnimatedLink href={Routes.portfolio}>
+              <DropdownMenuItem>
+                Portfolio
+              </DropdownMenuItem>
+            </AnimatedLink>
+            <AnimatedLink href={Routes.hireMe}>
+              <DropdownMenuItem>
+                  Hire me
+              </DropdownMenuItem>
+            </AnimatedLink>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   )
