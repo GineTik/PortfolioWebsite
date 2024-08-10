@@ -1,6 +1,7 @@
 "use client"
-import { Button } from "@/app/_components/ui/button/Button"
+import { Button, buttonVariants } from "@/app/_components/ui/button/Button"
 import AnimatedLink from "@/app/_components/ui/link/Link"
+import { Routes } from "@/configs/Routes.config"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import { BiMenu } from "react-icons/bi"
@@ -46,14 +47,9 @@ const Header = () => {
         </AnimatedLink>
       </div>
       <div className={cn(styles.header__right_side, "buttons")}>
-        <AnimatedLink href="menu">
-          <Button size="flexible">
+        <AnimatedLink href={Routes.hireMe} className={buttonVariants({ size: "flexible" })}>
             Hire me
-          </Button>
-        </AnimatedLink>
-        <Button size="flexible">
-          Login
-        </Button>
+          </AnimatedLink>
         <AnimatedLink href="/menu">
           <Button size="flexible">
             <BiMenu />

@@ -1,6 +1,6 @@
 import { useReduxActions } from "@/hooks/useReduxActions"
 import { cn } from "@/lib/utils"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { AnchorHTMLAttributes, useCallback } from "react"
 
 type AnimatedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>
@@ -8,10 +8,11 @@ type AnimatedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>
 const AnimatedLink = ({className, onClick, href, ...props}: AnimatedLinkProps) => {
     const router = useRouter()
     const {enableLoadingTransition} = useReduxActions()
+    const pathname = usePathname()
 
     const handle = useCallback((e: any) => {
         e.preventDefault()
-        if (!href)
+        if (!href || href == pathname)
             return
         
         enableLoadingTransition()
@@ -20,7 +21,7 @@ const AnimatedLink = ({className, onClick, href, ...props}: AnimatedLinkProps) =
         }, 1000)
         onClick && onClick(e)
 
-    }, [onClick, href])
+    }, [onClick, href, pathname])
 
     return (
         <>
