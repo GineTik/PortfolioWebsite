@@ -4,14 +4,13 @@ import AnimatedLink from "@/app/_components/ui/link/Link"
 import { Popover, PopoverContent, PopoverTrigger } from "@/app/_components/ui/popover/Popover"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { useState } from "react"
 import { IoLogoFigma, IoRocket } from "react-icons/io5"
 import styles from "./Skill.module.scss"
 
 if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger, useGSAP, DrawSVGPlugin)
+    gsap.registerPlugin(ScrollTrigger, useGSAP)
 }
 
 type SkillChildrenProps = {
@@ -25,18 +24,19 @@ type SkillGroupProps = SkillChildrenProps & {
 const SkillGroup = ({children, index}: SkillGroupProps) => {
     
     const [borderId, _] = useState("d" + crypto.randomUUID())
-    useGSAP(() => {
-        gsap.from(`#${borderId}`, {
-            scrollTrigger: {
-                trigger: `#${borderId}`,
-                start: "top 90%"
-                // end: "top 30%",
-                // scrub: true
-            },
-            duration: 2,
-            drawSVG: "0"
-        })
-    }, [])
+    // trial version
+    // useGSAP(() => {
+    //     gsap.from(`#${borderId}`, {
+    //         scrollTrigger: {
+    //             trigger: `#${borderId}`,
+    //             start: "top 90%"
+    //             // end: "top 30%",
+    //             // scrub: true
+    //         },
+    //         duration: 2,
+    //         drawSVG: "0"
+    //     })
+    // }, [])
 
   return (
     <div className={styles.group}>
