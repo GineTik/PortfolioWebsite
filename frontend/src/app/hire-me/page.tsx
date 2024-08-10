@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { BiLogoTelegram } from "react-icons/bi"
 import { RiPhoneFill } from "react-icons/ri"
-import { SiGmail } from "react-icons/si"
+import { SiGithub, SiGmail, SiViber } from "react-icons/si"
 import { Title, TitleGreen, TitleRow, TitleWhite } from "../_components/text/Title"
 import { buttonVariants } from "../_components/ui/button/Button"
 import Chat from "./components/chat/Chat"
@@ -21,9 +21,17 @@ const HireMePage = () => {
         </Title>
         
         <div className={styles.section__contacts}>
-          <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="#">
+          <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="https://t.me/GineTik0_0" target="_blank">
             <BiLogoTelegram />
             Telegram
+          </Link>
+          <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="viber://contact?number=+380672352711" target="_blank">
+            <SiViber />
+            Viber
+          </Link>
+          <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="https://github.com/GineTik" target="_blank">
+            <SiGithub />
+            Github
           </Link>
           <Link className={buttonVariants({ variant: "skill", size: "flexible" })}href="tel:+380672352711">
             <RiPhoneFill />
