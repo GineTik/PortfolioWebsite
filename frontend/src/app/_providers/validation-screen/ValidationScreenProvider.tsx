@@ -6,6 +6,9 @@ type ValidationScreenProviderProps = {
 }
 
 const ValidationScreenProvider = ({children}: ValidationScreenProviderProps) => {
+  
+  if (typeof window === "undefined")
+    return
 
   const {width, height} = useWindowDimensions()
 
