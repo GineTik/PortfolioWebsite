@@ -10,7 +10,7 @@ type PortfolioLinkProps = {
 
 const PortfolioLink = ({icon, text, href}: PortfolioLinkProps) => {
   return (
-    <Link href={href} className={styles.component}>
+    <Link href={href} target="_blank" className={styles.component}>
         <div className={styles.component__icon}>
             {icon}
         </div>

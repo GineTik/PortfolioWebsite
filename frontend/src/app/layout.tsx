@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Sora } from "next/font/google"
+import { Toaster } from "./_components/ui/toast/Toaster"
 import CursorFollower from "./_layouts/cursor/Cursor"
 import Header from "./_layouts/header/Header"
 import LoadingTransitionScreen from "./_layouts/loading-transition-screen/LoadingTransitionScreen"
@@ -28,6 +29,7 @@ export default function RootLayout({
           <CursorFollower />
           <Header />
           <Main>{children}</Main>
+          <Toaster />
         </Providers>
       </body>
     </html>

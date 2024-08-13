@@ -8,40 +8,35 @@ const TechnologiesSection = () => {
     <div className={styles.section}>
         <SkillGroup index={1}>
           <SkillHeader>
-            <SkillGroupTitle>Front-end</SkillGroupTitle>
+            <SkillGroupTitle>Technologies</SkillGroupTitle>
           </SkillHeader>
           <SkillContent>
-            <Skill name={"React/Next.js"} description={"React is a JavaScript library for building user interfaces, and Next.js is a React framework that enables server-side rendering and static site generation."} />
-            <Skill name={"Redux"} description={"Redux is a state management library for JavaScript apps, often used with React for predictable state management."} />
-            <Skill name={"TypeScript"} description={"TypeScript is a superset of JavaScript that adds static types, helping catch errors during development."} />
-            <Skill name={"Shacdn/ui"} description={"Shacdn/ui is a collection of reusable components that you can copy and paste into your apps."} />
-            <Skill name={"GSAP"} description={"GSAP (GreenSock Animation Platform) is a robust JavaScript animation library built for high-performance animations."} />
-            <Skill name={"SCSS"} description={"SCSS is a mature, stable, and powerful CSS extension language that adds features like variables, nested rules, and mixins."} />
-            <Skill name={"Tailwind"} description={"Tailwind CSS is a utility-first framework packed with classes that can be composed to build any design directly in your markup."} />
+            <Skill 
+              name={"C#"} 
+              description={"is a modern, object-oriented programming language developed by Microsoft, widely used for building Windows applications, web services, and games with frameworks like .NET."} 
+              links={[{text: "Microsoft Docs", url: "https://learn.microsoft.com/en-us/dotnet/csharp/"}]}
+            />
+
+            <Skill 
+              name={"Telegram.Bot"} 
+              description={"is a .NET client library that provides a convenient API for creating Telegram bots using C#. It simplifies interaction with the Telegram Bot API."} 
+              links={[{text: "GitHub Repository", url: "https://github.com/TelegramBots/Telegram.Bot"}]}
+            />
+
+            <Skill 
+              name={"Telegram Bot Api"} 
+              description={"is an HTTP-based interface created by Telegram to enable developers to build bots that can interact with Telegram users and groups."} 
+              links={[{text: "Official Documentation", url: "https://core.telegram.org/bots/api"}]}
+            />
           </SkillContent>
         </SkillGroup>
 
         <SkillGroup index={2}>
           <SkillHeader>
-            <SkillGroupTitle>Back-end</SkillGroupTitle>
-          </SkillHeader>
-          <SkillContent>
-            <Skill name={"Microservices"} description={"An architectural style that structures an application as a collection of loosely coupled services, each implementing specific business capabilities."} />
-            <Skill name={"Clean Architecture"} description={"A design pattern that separates the elements of a software solution into layers, promoting separation of concerns and making the system easier to maintain and test."} />
-            <Skill name={"Docker"} description={"Docker is a platform for developing, shipping, and running applications in containers, ensuring consistency across different environments."} />
-            <Skill name={"NGinx"} description={"NGINX is a high-performance HTTP server, reverse proxy, and load balancer, commonly used to serve web applications and APIs."} />
-            <Skill name={"Redis"} description={"Redis is an in-memory data structure store, used as a database, cache, and message broker, known for its high performance and flexibility."} />
-            <Skill name={"RabbitMQ"} description={"RabbitMQ is an open-source message broker that enables communication between different services in a distributed system using a messaging protocol like AMQP."} />
-            <Skill name={"Kafka"} description={"Kafka is a distributed streaming platform used for building real-time data pipelines and streaming applications, capable of handling large volumes of data with high throughput."} />
-          </SkillContent>
-        </SkillGroup>
-
-        <SkillGroup index={3}>
-          <SkillHeader>
             <SkillGroupTitle>Functionality</SkillGroupTitle>
             <PortfolioLink
               text="Documentation"
-              href="#"
+              href="https://github.com/GineTik/Telegramper-TelegramFramework/blob/master/README.md"
               icon={<SiGoogledocs />}
             />
           </SkillHeader>

@@ -1,0 +1,29 @@
+.variant__default {
+    @apply bg-stone-900 rounded-2xl border-2 border-lime-400 data-[state=open]:animate-[open_150ms] data-[state=closed]:animate-[closed_150ms] text-[1vw];
+
+    @keyframes open {
+        0% {
+            transform: translateY(100%) scale(.9);
+        }
+        100% {
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes closed {
+        0% {
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            transform: translateY(100%) scale(.9);
+        }
+    }
+}
+
+.close {
+    @apply text-white absolute top-4 right-4 transition;
+
+    &:hover {
+        @apply bg-white/50;
+    }
+}
