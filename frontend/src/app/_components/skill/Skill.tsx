@@ -1,12 +1,12 @@
 "use client"
 import { Button, buttonVariants } from "@/app/_components/ui/button/Button"
-import AnimatedLink from "@/app/_components/ui/link/Link"
 import { Popover, PopoverContent, PopoverTrigger } from "@/app/_components/ui/popover/Popover"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import { useState } from "react"
-import { IoLogoFigma, IoRocket } from "react-icons/io5"
+import Link from "next/link"
+import { ReactElement, useState } from "react"
+import { TbWorldWww } from "react-icons/tb"
 import styles from "./Skill.module.scss"
 
 if (typeof window !== "undefined") {
@@ -23,26 +23,11 @@ type SkillGroupProps = SkillChildrenProps & {
 
 const SkillGroup = ({children, index}: SkillGroupProps) => {
     
-    const [borderId, _] = useState("d" + crypto.randomUUID())
-    // trial version
-    // useGSAP(() => {
-    //     gsap.from(`#${borderId}`, {
-    //         scrollTrigger: {
-    //             trigger: `#${borderId}`,
-    //             start: "top 90%"
-    //             // end: "top 30%",
-    //             // scrub: true
-    //         },
-    //         duration: 2,
-    //         drawSVG: "0"
-    //     })
-    // }, [])
-
   return (
     <div className={styles.group}>
         <div className={styles.group__border}>
             <svg viewBox="0 0 1362 51" fill="none" style={{clipPath: "polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)"}}>
-                <path id={borderId} d="M0 1.5H571.719C590.957 1.5 609.914 6.12563 626.99 14.9869L667.51 36.0131C684.586 44.8744 703.543 49.5 722.781 49.5H1362" strokeWidth="2"></path>
+                <path d="M0 1.5H571.719C590.957 1.5 609.914 6.12563 626.99 14.9869L667.51 36.0131C684.586 44.8744 703.543 49.5 722.781 49.5H1362" strokeWidth="2"></path>
             </svg>
         </div>
         <div className={styles.group__inner}>
@@ -113,29 +98,34 @@ const SkillContent = ({children}: SkillContentProps) => {
     )
 }
 
-type SkillProps = SkillChildrenProps
+type SkillProps = {
+    name: string
+    description: string
+    links?: SkillLinkProps[]
+}
 
-const Skill = ({children}: SkillProps) => {
+type SkillLinkProps = {
+    icon?: ReactElement
+    text: string
+    url: string
+}
+
+const Skill = ({name, description, links}: SkillProps) => {
     return (
         <Popover>
             <PopoverTrigger asChild>
                 <Button variant="skill" size="flexible">
-                    {children}
+                    {name}
                 </Button>
             </PopoverTrigger>
             <PopoverContent className={styles.skill__popover} side="top" align="center">
                 <div className={styles.popover__content}>
-                    <div className={styles.popover__text}>{children} - It is framework similar to a ASP.Net Core. Framework contains services, middlewares, configuration, controllers(executors) and other</div>
+                    <div className={styles.popover__text}>{name} - {description}</div>
                     <div className={styles.popover__links}>
-                        <AnimatedLink href={"https://www.figma.com/"} target="_blank" className={buttonVariants({ variant: "popover_link", size: "flexible" })}>
-                            <IoLogoFigma />
-                        </AnimatedLink>
-                        <AnimatedLink>
-                            <Button variant="popover_link" size="flexible">
-                                <IoRocket />
-                                Other link
-                            </Button>
-                        </AnimatedLink>
+                        {links?.map(o => <Link href={o.url} target="_blank" className={buttonVariants({ variant: "popover_link", size: "flexible" })}>
+                            {o.icon ?? <TbWorldWww />}
+                            {o.text}
+                        </Link>)}
                     </div>
                 </div>
             </PopoverContent>

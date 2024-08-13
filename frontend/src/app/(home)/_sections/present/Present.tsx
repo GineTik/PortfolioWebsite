@@ -57,7 +57,7 @@ const PresentSection = () => {
               <span>Shevhuk</span>
             </h2>
             <BgFilteredText>
-              20 years old. I'm a university student and a passionate Fullstack developer with extensive knowledge of web technologies. Although I don't have any commercial experience yet, I have created several full-fledged applications that demonstrate my skills in front-end and back-end development. I have experience working with databases and various development tools, and I am eager to apply my knowledge in real projects
+              I am a developer who has the skills to create fullstack applications and a strong desire to develop in this area. Despite having relatively little commercial experience, I am ready to work and able to perform tasks effectively both online and offline or in a hybrid format. I want to create quality solutions that benefit users and businesses
             </BgFilteredText>
           </div>
           <div className={`${styles.section__media} cursor_trigger`}>

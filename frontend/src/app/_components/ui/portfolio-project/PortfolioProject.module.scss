@@ -12,10 +12,10 @@
     }
 
     .item__image {
-        @apply absolute w-[100vw] left-1/2 -translate-x-1/2;
+        @apply absolute w-full left-1/2 -translate-x-1/2;
 
         .item__image_content {
-            @apply w-full h-full;
+            @apply w-full;
         }
     }
 

@@ -7,8 +7,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const SliderAnimation = (({targetSelector}: AnimationProps) => {
     gsap.fromTo(targetSelector, {
-        top: "auto",
-        bottom: 0
+        top: 0,
     }, {
         scrollTrigger: {
             trigger: targetSelector,
@@ -16,8 +15,7 @@ const SliderAnimation = (({targetSelector}: AnimationProps) => {
             end: `bottom top`,
             scrub: true,
         },
-        top: 0,
-        bottom: "auto"
+        top: "-20vw",
     })
 }) as AnimationFunction
 

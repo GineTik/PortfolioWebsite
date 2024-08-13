@@ -15,7 +15,7 @@ type PortfolioProjectProps =
 
 const PortfolioProject = ({index, title, imageSrc}: PortfolioProjectProps) => {
   return (
-    <AnimatedLink href={Routes.project(0)} className="cursor_trigger">
+    <AnimatedLink href={Routes.project(index)} className="cursor_trigger">
 		<AnimationComponent className={styles.item}>
 			<AnimationComponent className={styles.item__image} animate={ParalaxAnimation}>
 				<Image className={styles.item__image_content} src={imageSrc} alt={title} width={1000} height={600} />
