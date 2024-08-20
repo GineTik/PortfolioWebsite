@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Presentation", "Users.Presentation\Users.Presentation.csproj", "{580D9805-5874-42D7-A8AA-EFF6001F5C6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8F572A6E-52E2-420B-822B-F5C4B1E1426C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Tests", "Users.Tests\Users.Tests.csproj", "{290DEB24-1A7C-4327-A114-E899B4C622BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{580D9805-5874-42D7-A8AA-EFF6001F5C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580D9805-5874-42D7-A8AA-EFF6001F5C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580D9805-5874-42D7-A8AA-EFF6001F5C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580D9805-5874-42D7-A8AA-EFF6001F5C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290DEB24-1A7C-4327-A114-E899B4C622BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290DEB24-1A7C-4327-A114-E899B4C622BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290DEB24-1A7C-4327-A114-E899B4C622BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290DEB24-1A7C-4327-A114-E899B4C622BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{290DEB24-1A7C-4327-A114-E899B4C622BC} = {8F572A6E-52E2-420B-822B-F5C4B1E1426C}
+	EndGlobalSection
+EndGlobal
