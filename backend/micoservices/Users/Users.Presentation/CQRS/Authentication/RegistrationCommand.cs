@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Confluent.Kafka;
+using KafkaAbstractions.Interfaces;
 using MediatR;
 using Users.Presentation.Data.Gateways.Users;
 using Users.Presentation.Entities;
@@ -8,6 +10,7 @@ using Users.Presentation.Helpers.JwtHelper;
 using Users.Presentation.Helpers.MailSender;
 using Users.Presentation.Helpers.PasswordHasher;
 using Users.Presentation.Helpers.ValidationHelper;
+using Users.Presentation.Kafka.Messages;
 
 namespace Users.Presentation.CQRS.Authentication;
 
@@ -35,14 +38,16 @@ public sealed class RegistrationCommandHandler : IRequestHandler<RegistrationCom
     private readonly ICodeGenerator _codeGenerator;
     private readonly IMailSender _mailSender;
     private readonly IJwtHelper _jwtHelper;
+    private readonly IKafkaProducer<Null, UserAuthenticated> _kafkaProducer;
     
-    public RegistrationCommandHandler(IUserGateway userGateway, IPasswordHasher passwordHasher, ICodeGenerator codeGenerator, IMailSender mailSender, IJwtHelper jwtHelper)
+    public RegistrationCommandHandler(IUserGateway userGateway, IPasswordHasher passwordHasher, ICodeGenerator codeGenerator, IMailSender mailSender, IJwtHelper jwtHelper, IKafkaProducer<Null, UserAuthenticated> kafkaProducer)
     {
         _userGateway = userGateway;
         _passwordHasher = passwordHasher;
         _codeGenerator = codeGenerator;
         _mailSender = mailSender;
         _jwtHelper = jwtHelper;
+        _kafkaProducer = kafkaProducer;
     }
     
     public async Task<RegistrationCommandResponse> Handle(RegistrationCommand request, CancellationToken cancellationToken)
@@ -60,6 +65,11 @@ public sealed class RegistrationCommandHandler : IRequestHandler<RegistrationCom
             
         await _mailSender.SendConfirmationMail(request.Email, code);
         var tokens = _jwtHelper.Create(new JwtPayload {UserId = userId});
+
+        await _kafkaProducer.SendAsync(new()
+        {
+            Value = new UserAuthenticated(userId)
+        });
         
         return new RegistrationCommandResponse
         {

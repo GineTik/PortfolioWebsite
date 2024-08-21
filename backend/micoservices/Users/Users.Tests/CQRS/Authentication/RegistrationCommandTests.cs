@@ -1,4 +1,6 @@
-﻿using Moq;
+﻿using Confluent.Kafka;
+using KafkaAbstractions.Interfaces;
+using Moq;
 using Users.Presentation.CQRS.Authentication;
 using Users.Presentation.Data.Gateways.Users;
 using Users.Presentation.Entities;
@@ -7,6 +9,7 @@ using Users.Presentation.Helpers.CodeGenerator;
 using Users.Presentation.Helpers.JwtHelper;
 using Users.Presentation.Helpers.MailSender;
 using Users.Presentation.Helpers.PasswordHasher;
+using Users.Presentation.Kafka.Messages;
 
 namespace Users.Tests.CQRS.Authentication;
 
@@ -17,6 +20,7 @@ public class RegistrationCommandTests
     private readonly Mock<IMailSender> _mailSenderMock = new();
     private readonly Mock<IJwtHelper> _jwtHelperMock = new();
     private readonly Mock<IPasswordHasher> _passwordHasherMock = new();
+    private readonly Mock<IKafkaProducer<Null, UserAuthenticated>> _kafkaProducerMock = new();
     private readonly RegistrationCommandHandler _handler;
 
     public RegistrationCommandTests()
@@ -26,7 +30,8 @@ public class RegistrationCommandTests
             _passwordHasherMock.Object,
             _codeGeneratorMock.Object,
             _mailSenderMock.Object,
-            _jwtHelperMock.Object
+            _jwtHelperMock.Object,
+            _kafkaProducerMock.Object
         );
     }
 
