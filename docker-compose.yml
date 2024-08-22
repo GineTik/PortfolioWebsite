@@ -20,23 +20,29 @@ services:
     networks:
       - dev
 
-  kafka:
-    image: confluentinc/cp-kafka:latest
-    container_name: kafka
+  authentication-microservice:
+    build:
+      context: ./backend/microservices/Users/Users.Presentation
+    networks:
+      - dev
     ports:
-      - "9092:9092"
+      - "3001:3001"
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka
     environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
-      KAFKA_LISTENERS: PLAINTEXT://portfoliowebsite-production-5f1d.up.railway.app:9092
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://portfoliowebsite-production-5f1d.up.railway.app:9092
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-      KAFKA_MIN_INSYNC_REPLICAS: 1
-      KAFKA_LOG_DIRS: /var/lib/kafka/data
-      KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE: 'false'
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      - KAFKA_ENABLE_KRAFT=yes
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_CFG_BROKER_ID=1
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka:9093
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_KRAFT_CLUSTER_ID=4e73d001-dcb1-4ee5-b32c-3b45c9ad7128
     volumes:
       - ./kafka-data:/var/lib/kafka/data
     networks:
