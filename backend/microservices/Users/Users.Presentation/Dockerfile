@@ -1,27 +1,11 @@
-﻿# Устанавливаем базовый образ .NET SDK для сборки
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-
-# Устанавливаем рабочую директорию внутри контейнера
-WORKDIR /app
-
-# Копируем файлы проекта в контейнер
-COPY . ./
-
-# Восстанавливаем зависимости (nuget-пакеты)
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY Users.Presentation.csproj .
 RUN dotnet restore
+COPY . .
+RUN dotnet publish -c release -o /app
 
-# Сборка и публикация проекта в режим Release
-RUN dotnet publish -c Release -o out
-
-# Финальный этап: используем более легковесный образ для запуска приложения
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
-
-# Устанавливаем рабочую директорию внутри контейнера
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-
-# Копируем собранные файлы из предыдущего этапа в текущий контейнер
-COPY --from=build /app/out .
-
-EXPOSE 3001
-
+COPY --from=build /app .
 ENTRYPOINT ["dotnet", "Users.Presentation.dll"]

@@ -4,6 +4,7 @@ networks:
 services:
   nginx:
     image: nginx:stable-alpine
+    container_name: nginx
     ports:
       - "80:80"
       - "443:443"
@@ -15,12 +16,14 @@ services:
       - dev
 
   frontend:
+    container_name: frontend
     build:
       context: ./frontend
     networks:
       - dev
 
   authentication-microservice:
+    container_name: authentication-microservice
     build:
       context: ./backend/microservices/Users/Users.Presentation
     networks:
