@@ -27,6 +27,8 @@ services:
       - dev
     ports:
       - "3001:3001"
+    environment:
+      - NIXPACKS_CSHARP_SDK_VERSION=7.0
 
   kafka:
     image: bitnami/kafka:latest
