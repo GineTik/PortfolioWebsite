@@ -1,0 +1,1 @@
+.section{@apply flex gap-[2vw] justify-center flex-wrap}.section .section__image{@apply w-[47vw] h-[35vw] bg-stone-800 rounded-[2vw] overflow-hidden relative}.section .section__image img{@apply w-full object-cover absolute}/*# sourceMappingURL=ImageSection.module.min.css.map */

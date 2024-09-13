@@ -1,6 +1,6 @@
 FROM node:alpine as build
 
-COPY package.json package.json
+COPY package*.json ./
 RUN npm install
 
 COPY . .

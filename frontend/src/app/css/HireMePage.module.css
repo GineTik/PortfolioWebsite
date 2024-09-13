@@ -1,0 +1,38 @@
+.section {
+  @apply flex space-x-[1vw] pl-[.5vw];
+}
+.section .section__column {
+  @apply w-1/2 flex flex-col gap-[2vw];
+}
+.section .section__column .section__title {
+  @apply text-[10vw];
+}
+.section .section__contacts {
+  @apply flex gap-[1vw] flex-wrap;
+}
+.section .section__looking_job {
+  @apply mt-[.5vw] relative pl-[2vw] uppercase font-black text-lime-400 text-[1.3vw];
+}
+.section .section__looking_job::before {
+  content: "";
+  @apply size-[.7vw] bg-lime-400 rounded-full absolute left-0 top-1/2 -translate-y-1/2;
+}
+.section .section__looking_job::after {
+  content: "";
+  @apply size-[.7vw] bg-lime-400 rounded-full absolute left-0 top-1/2 -translate-y-1/2 animate-ping origin-bottom;
+}
+.section .section__information {
+  @apply w-full table text-[1.5vw];
+}
+.section .section__information > div {
+  @apply w-full table-row;
+}
+.section .section__information > div:first-child > div {
+  @apply pt-0;
+}
+.section .section__information > div > div {
+  @apply w-1/2 table-cell py-[.4vw];
+}
+.section .section__information > div > div:first-child {
+  @apply text-white/50;
+}/*# sourceMappingURL=HireMePage.module.css.map */

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "CI=false next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,6 +19,7 @@
     "circletype": "^2.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "file-loader": "^6.2.0",
     "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
     "lenis": "^1.1.9",

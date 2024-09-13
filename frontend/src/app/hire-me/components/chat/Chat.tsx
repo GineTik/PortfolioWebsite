@@ -1,4 +1,3 @@
-import MyAvatarImage from "@/../public/images/i.jpg"
 import Image from "next/image"
 import { CgAlarm } from "react-icons/cg"
 import { IoSend } from "react-icons/io5"
@@ -10,7 +9,7 @@ const Chat = () => {
   return (
     <div className={styles.component}>
         <div className={styles.component__header}>
-            <Image src={MyAvatarImage.src} className={styles.component__avatar} alt={"Denis Shevchuk"} width={200} height={200} />
+            <Image src={"/images/i.jpg"} className={styles.component__avatar} alt={"Denis Shevchuk"} width={200} height={200} />
             <div className={styles.component__header_column}>
                 <div className={styles.component__name}>Denis Shevchuk</div>
                 <div className={styles.component__status}>

@@ -1,0 +1,6 @@
+.slider {
+  @apply -mx-[10px] overflow-hidden h-[50vw] flex justify-start items-center;
+}
+.slider .slider__content {
+  @apply w-auto flex gap-[6vw] h-[35vw];
+}/*# sourceMappingURL=Slider.module.css.map */

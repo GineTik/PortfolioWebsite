@@ -1,5 +1,4 @@
 "use client"
-import IImage from "@/../public/images/i.jpg"
 import BgFilteredText from "@/app/_components/bg-filter-text/BgFilteredText"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
@@ -62,7 +61,7 @@ const PresentSection = () => {
           </div>
           <div className={`${styles.section__media} cursor_trigger`}>
             <div className={styles.media__wrapper}>
-              <Image className={styles.media__image} src={IImage.src} alt="text" width={1000} height={1000} />
+              <Image className={styles.media__image} src={"/images/i.jpg"} alt="text" width={1000} height={1000} />
             </div>
           </div>
           <div className={styles.section__skills_ribbon}>

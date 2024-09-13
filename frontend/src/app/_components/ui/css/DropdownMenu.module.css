@@ -1,0 +1,35 @@
+.component__content {
+  @apply bg-stone-900 border-[.3vw] border-lime-400 z-50 rounded-[1vw] p-[.2vw];
+}
+.component__content .component__item {
+  @apply px-[1vw] py-[.5vw] rounded-[.7vw] transition text-[1.5vw] outline-none;
+}
+.component__content .component__item:hover {
+  @apply bg-stone-800;
+}
+.component__content[data-state=open] {
+  animation: open 500ms forwards;
+}
+.component__content[data-state=closed] {
+  animation: closed 200ms forwards;
+}
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes closed {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}/*# sourceMappingURL=DropdownMenu.module.css.map */

@@ -1,0 +1,12 @@
+.component {
+  @apply flex gap-[.6vw] items-center mt-[.7vw] transition text-[1.3vw] rounded-full pr-[.5vw];
+}
+.component .component__icon {
+  @apply bg-stone-800 p-[.6vw] rounded-full;
+}
+.component:hover {
+  @apply bg-stone-700;
+}
+.component:hover .component__icon {
+  @apply bg-stone-700;
+}/*# sourceMappingURL=PortfolioLink.module.css.map */

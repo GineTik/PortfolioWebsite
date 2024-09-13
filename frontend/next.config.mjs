@@ -2,6 +2,9 @@
 const nextConfig = {
 	images: {
 		domains: ['img001.prntscr.com', 'rise2.studio']
+	},
+	webpack: (config, { isServer }) => {
+		return config
 	}
 }
 

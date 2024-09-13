@@ -1,0 +1,3 @@
+.page .page__gallery {
+  @apply flex flex-wrap gap-[3vw] justify-center mt-[5vw];
+}/*# sourceMappingURL=Portfolio.module.css.map */
